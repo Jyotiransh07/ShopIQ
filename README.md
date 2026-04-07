@@ -10,7 +10,12 @@ This project is built with React, Vite, and Supabase. Follow these steps to depl
 
 ## Deployment Steps
 
-### 1. Push to GitHub
+### 1. Set up Supabase Database
+- Go to your [Supabase Dashboard](https://supabase.com/dashboard).
+- Open the **SQL Editor**.
+- Copy the contents of the `supabase.sql` file from this project and run it to create the necessary tables and security policies.
+
+### 2. Push to GitHub
 - Export this project to GitHub using the **Settings > Export to GitHub** menu in AI Studio.
 - If you encounter authentication errors, try disconnecting and reconnecting your GitHub account in AI Studio settings.
 
@@ -26,8 +31,9 @@ In the Vercel deployment settings, add the following **Environment Variables**:
 | --- | --- |
 | `VITE_SUPABASE_URL` | Your Supabase Project URL |
 | `VITE_SUPABASE_ANON_KEY` | Your Supabase Anon Key |
+| `GEMINI_API_KEY` | Your Google AI Studio API Key |
 
-*Note: You can find these in your Supabase Dashboard under **Project Settings > API**.*
+*Note: You can find Supabase keys in your Supabase Dashboard under **Project Settings > API**. You can find your Gemini API key in the **AI Studio Settings > Secrets** or at [aistudio.google.com/app/apikey](https://aistudio.google.com/app/apikey).*
 
 ### 4. Deploy
 - Click **"Deploy"**.

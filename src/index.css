@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-main: #0f172a;
+  --color-surface: #1e293b;
+  --color-card: #0f2744;
+  --color-accent-cyan: #00e5ff;
+  --color-accent-purple: #b47cff;
+  --color-accent-green: #00e676;
+  --color-accent-pink: #ff4d8d;
+  --color-accent-amber: #ffc947;
+}
+
+@layer base {
+  body {
+    @apply bg-bg-main text-white font-sans;
+  }
+}
+
+.glass {
+  @apply bg-surface/40 backdrop-blur-md border border-white/10 shadow-xl;
+}
+
+.glass-card {
+  @apply bg-card/60 backdrop-blur-lg border border-white/10 shadow-lg hover:shadow-accent-cyan/10 transition-all duration-300;
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-bg-main;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-surface rounded-full border-2 border-bg-main;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-white/20;
+}
